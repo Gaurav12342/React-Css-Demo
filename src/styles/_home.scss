@@ -1,0 +1,111 @@
+@import "../styles/variables";
+
+@mixin heading-secondary-section {
+  .heading-secondary {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: .2rem;
+    transition: all .2s;
+
+    &:hover {
+      transform: skewY(2deg) skewX(15deg) scale(1);
+    }
+
+    @media (max-width: 40rem) {
+      font-size: 0.90rem;
+
+      &:hover {
+        transform: skewY(1deg) skewX(10deg) scale(1);
+        text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+      }
+    }
+  }
+}
+
+.section-about {
+  background-color: $color-gray-light-1;
+  padding: 12rem 0;
+  margin-top: -12rem;
+  transform: skewY(-7deg);
+
+  & > * {
+    transform: skewY(7deg);
+  }
+
+  @include heading-secondary-section;
+  //.heading-secondary {
+  //  font-size: 2rem;
+  //  text-transform: uppercase;
+  //  font-weight: 700;
+  //  display: inline-block;
+  //  background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+  //  -webkit-background-clip: text;
+  //  color: transparent;
+  //  letter-spacing: .2rem;
+  //  transition: all .2s;
+  //
+  //  &:hover {
+  //    transform: skewY(2deg) skewX(15deg) scale(1);
+  //  }
+  //
+  //  @media (max-width: 40rem) {
+  //    font-size: 0.90rem;
+  //
+  //    &:hover {
+  //      transform: skewY(1deg) skewX(10deg) scale(1);
+  //      text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+  //    }
+  //  }
+  //}
+}
+
+.section-features {
+  padding: 10rem 15rem;
+  background-image: linear-gradient(
+                  to right bottom,
+                  rgba(223, 191, 121, 0.699),
+                  #57dba8
+  ),
+  url("../Images/mountain-image.jpeg");
+  background-size: cover;
+  background-position: top;
+  transform: skewY(-7deg);
+
+  & > * {
+    transform: skewY(7deg);
+  }
+}
+
+.section-tours {
+  background-color: $color-gray-light-1;
+  padding: 13rem 15rem 5rem 15rem;
+  margin-top: -6rem;
+
+  @include heading-secondary-section;
+}
+
+.section-stories {
+  position: relative;
+  padding: 5rem 15rem 10rem 15rem;
+  //background-color: $color-gray-light-1;
+  @include heading-secondary-section;
+}
+
+.section-book {
+  padding: 5rem 10rem;
+  background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+  //@include heading-secondary-section;
+}
+
+.book {
+  background-image: linear-gradient(105deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 50%, transparent 50%), url("../Images/nature-image.jpeg");
+  background-size: 100%;
+  height: 43rem;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+}
